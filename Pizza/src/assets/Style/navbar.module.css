@@ -1,0 +1,144 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease;
+  padding: 24px 0;
+}
+
+.navbar.scrolled {
+  background: var(--cream);
+  box-shadow: 0 2px 24px rgba(26,18,8,0.12);
+  padding: 14px 0;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logoIcon {
+  font-size: 28px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.logoText {
+  font-family: var(--font-title);
+  font-size: 28px;
+  letter-spacing: 0.06em;
+  color: var(--charcoal);
+  line-height: 1;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navLink {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.2s;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--red);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--red);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navCta {
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+
+.navCta:hover {
+  background: var(--red-dark);
+  transform: translateY(-1px);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--charcoal);
+  transition: transform 0.3s, opacity 0.3s;
+  transform-origin: center;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    flex-direction: column;
+    padding: 24px 40px;
+    gap: 20px;
+    border-top: 1px solid var(--cream-dark);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  }
+
+  .navOpen {
+    display: flex;
+  }
+}

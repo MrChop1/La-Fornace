@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Bebas+Neue&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream: #F5EFE0;
+  --cream-dark: #EDE4CC;
+  --red: #C8271A;
+  --red-dark: #9E1E12;
+  --red-light: #E84135;
+  --charcoal: #1A1208;
+  --brown: #5C3A1E;
+  --gold: #D4952A;
+  --gold-light: #F0B84A;
+  --white: #FDFAF4;
+  --text-body: #2C1810;
+  --font-display: 'Playfair Display', serif;
+  --font-sans: 'DM Sans', sans-serif;
+  --font-title: 'Bebas Neue', cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--cream);
+  color: var(--text-body);
+  overflow-x: hidden;
+}
+
+/* Grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-sans);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--red);
+  border-radius: 3px;
+}
+
+/* Utility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}

@@ -1,0 +1,103 @@
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: var(--bg-color)
+}
+
+header nav .title a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+header nav .title a span {
+    color: var(--text-color);
+}
+
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 25px; 
+}
+
+header nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover {
+    color: var(--text-color);
+}
+
+header nav ul button {
+    background-color: var(--text-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 22px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    margin-left: 10px;
+    transition: background 0.3s;
+}
+
+header nav ul button:hover {
+    background-color: #e66f00;
+}
+.menu-icon {
+    display: none; /* Hide icon on desktop */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+    border-radius: 2px;
+}
+
+/* --- Mobile Styles (Media Query) --- */
+@media (max-width: 768px) {
+    header nav {
+        padding: 15px 25px;
+    }
+
+    .menu-icon {
+        display: flex; /* Show icon on mobile */
+    }
+
+    header nav ul {
+        display: none; /* Hide the links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Right below the header */
+        left: 0;
+        width: 100%;
+        background-color: var(--mob-color);
+        padding: 20px;
+        text-align: center;
+        gap: 20px;
+        z-index: 100;
+    }
+
+    /* This class will be added by JavaScript to show the menu */
+    header nav ul.active {
+        display: flex;
+    }
+
+    header nav ul button {
+        margin-left: 0; /* Center button on mobile */
+    }
+}

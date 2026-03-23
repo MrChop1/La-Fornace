@@ -1,0 +1,293 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+  padding: 120px 40px 80px;
+}
+
+.bgCircle {
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(200,39,26,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.bgCircle2 {
+  position: absolute;
+  bottom: -300px;
+  left: -150px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212,149,42,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.marqueeWrap {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(26,18,8,0.12);
+  border-bottom: 1px solid rgba(26,18,8,0.12);
+  background: var(--red);
+  padding: 8px 0;
+  z-index: 1;
+}
+
+.marquee {
+  display: flex;
+  gap: 0;
+  animation: marquee 20s linear infinite;
+  white-space: nowrap;
+}
+
+.marquee span {
+  font-family: var(--font-title);
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  color: var(--white);
+  padding: 0 20px;
+  flex-shrink: 0;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1.5px;
+  background: var(--red);
+}
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.0;
+  margin-bottom: 28px;
+}
+
+.line1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 76px);
+  font-weight: 400;
+  color: var(--charcoal);
+  letter-spacing: -0.01em;
+}
+
+.line2 {
+  font-family: var(--font-title);
+  font-size: clamp(60px, 10vw, 130px);
+  letter-spacing: 0.04em;
+  color: var(--charcoal);
+  line-height: 0.9;
+}
+
+.line3 {
+  font-family: var(--font-display);
+  font-size: clamp(50px, 8vw, 100px);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.sub {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--brown);
+  margin-bottom: 40px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+}
+
+.btnPrimary:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200,39,26,0.35);
+}
+
+.btnSecondary {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--charcoal);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.btnSecondary:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+/* Pizza visual */
+.pizzaVis {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pizzaFloat {
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+}
+
+.pizzaEmoji {
+  font-size: clamp(160px, 20vw, 280px);
+  line-height: 1;
+  filter: drop-shadow(0 30px 60px rgba(26,18,8,0.25));
+  position: relative;
+  z-index: 2;
+}
+
+.pizzaRing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 115%;
+  height: 115%;
+  border-radius: 50%;
+  border: 2px dashed rgba(200,39,26,0.2);
+  animation: spin 30s linear infinite;
+}
+
+.pizzaRing2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 135%;
+  height: 135%;
+  border-radius: 50%;
+  border: 1px solid rgba(212,149,42,0.15);
+  animation: spin 50s linear infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(-5deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.scrollHint {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brown);
+  opacity: 0.6;
+}
+
+.scrollLine {
+  width: 40px;
+  height: 1px;
+  background: var(--brown);
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollLine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--red);
+  animation: slide 2s ease-in-out infinite;
+}
+
+@keyframes slide {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+@media (max-width: 900px) {
+  .pizzaVis {
+    opacity: 0.4;
+    right: -5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .pizzaVis {
+    display: none;
+  }
+
+  .hero {
+    padding: 140px 24px 80px;
+  }
+}
